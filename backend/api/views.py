@@ -1,7 +1,6 @@
 # backend/api/views.py
 
 from rest_framework import viewsets
-from .models import Produto
 from .serializers import ProdutoSerializer
 
 class ProdutoViewSet(viewsets.ModelViewSet):
