@@ -1,4 +1,4 @@
-from .django import models
+from django.db import models
 from .alunos import Aluno
 from .disciplinas import Disciplina
 from .avaliacoes import Avaliacao

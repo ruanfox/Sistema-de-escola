@@ -5,8 +5,8 @@ from .disciplinas import Disciplina
 class Frequencia(models.Model):
     aluno_id = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     disciplina_id = models.ForeignKey(Disciplina, on_delete=models.CASCADE)
-    date = models.DateField(auto_now_add=True)
-    status = models.BooleanField(default=True)
+    data = models.DateField(auto_now_add=True)
+    presenca = models.BooleanField(default=True)
 
     def __str__(self):
-    return f"{self.data} - {self.status}"
+        return f"{self.data} - {self.status}"

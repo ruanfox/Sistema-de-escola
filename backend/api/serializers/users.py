@@ -8,17 +8,19 @@ class EnderecoSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class UserSerializer(serializers.ModelSerializer):
-    endereco = EnderecoSerializer()  # Aninhado para exibir os dados do endereço
+    endereco = EnderecoSerializer()
 
     class Meta:
         model = User
         fields = [
             'id',
             'nome',
+            'cpf',
+            'rg',
             'email',
             'senha',
-            'tipo_User',
             'data_criacao',
+            'tipo_User',
             'foto',
             'endereco',
         ]

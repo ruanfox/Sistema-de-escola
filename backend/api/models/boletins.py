@@ -1,6 +1,7 @@
 from django.db import models
 from .alunos import Aluno
 from .turmas import Turma
+from django.utils import timezone
 
 class Boletim(models.Model):
     aluno_id = models.ForeignKey(Aluno, on_delete=models.CASCADE)
@@ -8,7 +9,7 @@ class Boletim(models.Model):
     semestre = models.IntegerField()
     media_geral = models.FloatField()
     faltas_total = models.IntegerField()
-    data = models.DateField(default=timezone.now)
+    data_geracao = models.DateField(default=timezone.now)
     
     def __str__(self):
         return f"Boletim de {self.aluno} - Semestre {self.semestre}"

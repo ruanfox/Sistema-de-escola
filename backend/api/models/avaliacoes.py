@@ -10,4 +10,4 @@ class Avaliacao(models.Model):
     turma_id = models.ForeignKey(Turma, on_delete=models.CASCADE)
 
     def __str__(self):
-    return f"{self.serie} - {self.nome}"
+        return f"{self.serie} - {self.nome}"
