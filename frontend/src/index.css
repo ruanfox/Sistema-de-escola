@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+    --color-grey-5: #FCFAFA;
+    --color-grey-10: #F1F1F1;
+    --color-grey-25: #DCDCDC;
+    --color-grey-50: #C4C4C4;
+    --color-grey-100: #A7A7A7;
+    --color-grey-200: #8A8A8A;
+    --color-grey-300: #6C6C6C;
+    --color-grey-400: #4F4F4F;
+    --color-grey-500: #424242;
+    --color-grey-600: #353535;
+    --color-grey-700: #282828;
+    --color-grey-800: #1A1A1A;
+    --color-grey-900: #101010;
+
+
+    --color-primary-25: #D0D3DE;
+    --color-primary-50: #B1B5C8;
+    --color-primary-100: #8A90AC;
+    --color-primary-200: #636C90;
+    --color-primary-300: #3C4775;
+    --color-primary-400: #152259;
+    --color-primary-500: #121C4A;
+    --color-primary-600: #0E173B;
+    --color-primary-700: #0B112D;
+    --color-primary-800: #070B1E;
+    --color-primary-900: #040712;
+
+
+    --color-secondary-10: #EBF6FF;
+    --color-secondary-25: #D5E7F6;
+    --color-secondary-50: #B9D7F1;
+    --color-secondary-100: #B9D7F1;
+    --color-secondary-200: #73B0E2;
+    --color-secondary-300: #509CDB;
+    --color-secondary-400: #2D88D4;
+    --color-secondary-500: #2671B1;
+    --color-secondary-600: #1E5B8D;
+    --color-secondary-700: #17446A;
+    --color-secondary-800: #0F2D47;
+    --color-secondary-900: #091B2A;
+}
