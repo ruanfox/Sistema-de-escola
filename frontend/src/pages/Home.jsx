@@ -1,8 +1,7 @@
-import WeeklyTimeTable from "../components/WeeklyTimeTable"
-import PersonalInfoCard from "../components/PersonalInfoCard"
+import PersonalInfoCard from "../components/PersonalInfoCardHome"
 import NotificationsCard from "../components/NotificationsCard"
 import TodayClassesCard from "../components/TodayClassesCard"
-import SubjectsCard from "../components/SubjectsCard"
+import OngoingDisciplines from "../components/OngoingDisciplines"
 
 export default function Home() {
     return(
@@ -14,7 +13,7 @@ export default function Home() {
             </div>
 
             <div className="w-3/6 flex flex-col gap-1">
-                <SubjectsCard />
+                <OngoingDisciplines />
             </div>
         </div>
     )

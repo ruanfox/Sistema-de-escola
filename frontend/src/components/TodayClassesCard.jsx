@@ -14,7 +14,7 @@ export default function TodayClassesCard() {
               : <WeeklyTimeTable />
             }
             
-            <strong className="flex justify-center items-center w-full h-10 bg-grey-10">
+            <strong className="flex justify-center items-center w-full h-10 bg-grey-10 rounded-[8px]">
                 <button 
                     className="text-secondary-400 cursor-pointer"
                     onClick={() => setShowTable(prev => !prev) }

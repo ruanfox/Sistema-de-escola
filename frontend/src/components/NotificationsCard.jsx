@@ -6,7 +6,7 @@ export default function NotificationsCard() {
             <div className="h-[1px] w-full bg-grey-100"></div>
             
             <p className="mt-5 mb-5">Nenhuma notificação encontrada!</p>
-            <strong className="flex justify-center items-center w-full h-10 bg-grey-10">
+            <strong className="flex justify-center items-center w-full h-10 bg-grey-10 rounded-[8px]">
                 <button className="text-secondary-400 cursor-pointer">
                     Ver Todos
                 </button>
