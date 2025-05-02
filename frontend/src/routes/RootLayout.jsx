@@ -15,7 +15,7 @@ export default function RootLayout() {
       <main className={`flex-1 ${showHeader ? 'ml-60' : ''}`}>
         {showHeader && <Header />}  
 
-        <div className={`${isLogin ? '' : 'p-8'}`}>
+        <div>
           <Outlet />
         </div>
       </main>

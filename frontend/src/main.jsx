@@ -6,6 +6,7 @@ import "./index.css";
 import Root from "./routes/RootLayout";
 import Home from "./pages/Home";
 import Login from "./pages/Login"
+import Dashboard from "./pages/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       { index: true, element: <Home /> },
-      { path: "login", element: <Login /> }
+      { path: "login", element: <Login /> },
+      { path: "Dashboard", element: <Dashboard />}
     ]
   }
 ]);

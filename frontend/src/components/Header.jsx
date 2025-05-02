@@ -8,8 +8,8 @@ export default function Header(){
                 <p></p>
             </div>
             <div className="flex items-center">
-            <IoIosNotificationsOutline className="w-7 h-7 mr-12"/>
-                <button className="bg-secondary-300 text-[14px] w-[7.5rem] h-10 text-white rounded-[0.5rem]">Sair</button>
+            <IoIosNotificationsOutline className="w-7 h-7 mr-12 cursor-pointer"/>
+                <button className="bg-secondary-300 text-[14px] w-[7.5rem] h-10 text-white rounded-[0.5rem] cursor-pointer">Sair</button>
             </div>
         </header>
     )
