@@ -2,7 +2,7 @@ from django.db import models
 
 class Disciplina(models.Model):
     DISCIPLINAS_CHOICES = [
-    # Ensino Fundamental
+         # Ensino Fundamental
         ('LP', 'Língua Portuguesa'),
         ('MAT', 'Matemática'),
         ('CIE', 'Ciências'),

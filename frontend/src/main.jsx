@@ -7,6 +7,7 @@ import Root from "./routes/RootLayout";
 import Home from "./pages/Home";
 import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard";
+import PersonalInfo from "./pages/PersonalInfo";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "login", element: <Login /> },
-      { path: "Dashboard", element: <Dashboard />}
+      { path: "dashboard", element: <Dashboard />},
+      { path: "informacaoPessoal", element: <PersonalInfo />}
     ]
   }
 ]);

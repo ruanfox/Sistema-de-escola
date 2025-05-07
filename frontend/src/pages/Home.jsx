@@ -1,4 +1,4 @@
-import PersonalInfoCard from "../components/PersonalInfoCardHome"
+import PersonalInfoCard from "../components/PersonalInfoCard"
 import NotificationsCard from "../components/NotificationsCard"
 import TodayClassesCard from "../components/TodayClassesCard"
 import OngoingDisciplines from "../components/OngoingDisciplines"

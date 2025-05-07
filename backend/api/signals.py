@@ -1,18 +1,17 @@
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
-from api.models.users import User  # ou o caminho que você tiver
+from api.models.users import User  
 from django.utils.text import slugify
 
 @receiver(pre_save, sender=User)
 def gerar_email_e_senha(sender, instance, **kwargs):
     if not instance.email:
-        # Gera as iniciais
         nomes = instance.nome.strip().split()
         iniciais = ''.join([n[0].lower() for n in nomes])
         base_email = f"{iniciais}@gmail.com"
         email = base_email
 
-        # Checa se já existe, adiciona números
+        
         i = 1
         while User.objects.filter(email=email).exclude(pk=instance.pk).exists():
             email = f"{iniciais}{i}@gmail.com"
@@ -20,6 +19,6 @@ def gerar_email_e_senha(sender, instance, **kwargs):
 
         instance.email = email
 
-    # Define a senha como o CPF (apenas se estiver sendo criado)
+    
     if instance._state.adding and hasattr(instance, 'cpf'):
         instance.set_password(instance.cpf)

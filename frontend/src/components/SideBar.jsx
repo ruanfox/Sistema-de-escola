@@ -1,50 +1,66 @@
-import { Link } from "react-router-dom";
-import Logo from "../assets/Logo.jpg"
-import { RiHome4Line } from "react-icons/ri";
-import { PiChalkboardTeacherBold } from "react-icons/pi";
-import { PiStudentBold } from "react-icons/pi";
+import { Link, NavLink } from "react-router-dom";
+import Logo from "../assets/Logo.jpg";
+import { RiHome4Line, RiInformation2Line } from "react-icons/ri";
+import { PiChalkboardTeacherBold, PiStudentBold } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineAssessment } from "react-icons/md";
 
 
+const mainMenu = [
+  { to: "/dashboard", label: "Painel", icon: RiHome4Line },
+  { to: "/professores", label: "Professores", icon: PiChalkboardTeacherBold },
+  { to: "/estudantes", label: "Estudantes/Classes", icon: PiStudentBold },
+  { to: "/exames", label: "Exames", icon: MdOutlineAssessment },
+  { to: "/configuracoes", label: "Configurações", icon: IoSettingsOutline },
+];
+
 export default function SideBar() {
   return (
     <nav className="fixed flex flex-col w-60 h-full bg-primary-400 text-white">
-        {/* Logo */}
-        <div className="flex flex-col items-center mb-10 mt-6">
+      {/* Top Section */}
+      <ul>
+        <li className="flex flex-col items-center mt-5 mb-5">
           <img src={Logo} alt="" className="w-[4rem] h-[4rem] rounded-[100%] bg-gray-400"/>
           <Link to="/" className="text-[14px] font-bold mt-4 ver:text-white no-underline">
             Sistema EduTrack
           </Link>
-        </div>
+        </li>
         {/* divider*/ }
-          <div className="mx-full h-px bg-gray-400"></div>
-        {/* Menu */}
-        <div className="w-full p-6 text-[14px] font-semibold">
-          <ul className="list-none m-0 p-0 space-y-2">
-            <Link to="/Dashboard">
-              <li className="flex items-center pl-4 h-10 hover:bg-secondary-300 rounded-[4px]">
-                <RiHome4Line className="w-4 h-4 mr-4"/>
-                <p>Painel</p>
-              </li>
-            </Link>
-            <li className="flex items-center pl-4 h-10 hover:bg-secondary-300 rounded-[4px]">
-              <PiChalkboardTeacherBold className="w-4 h-4 mr-4"/>
-              <p>Professores</p></li>
-            <li className="flex items-center pl-4 h-10 hover:bg-secondary-300 rounded-[4px]">
-              <PiStudentBold className="w-4 h-4 mr-4"/>
-              <p>Estudantes/Classes</p></li>
-              <li className="flex items-center pl-4 h-10 hover:bg-secondary-300 rounded-[4px]">
-              <IoSettingsOutline className="w-4 h-4 mr-4"/>
-              <p>Configurações</p>
-            </li>
-            <li className="flex items-center pl-4 h-10 hover:bg-secondary-300 rounded-[4px]">
-              <MdOutlineAssessment className="w-4 h-4 mr-4"/>
-              <p>Exames</p>
-            </li>
-          </ul>
-        </div>
-        <p> </p>
-    </nav >
+        <hr className="mx-full h-px bg-gray-400"/>
+        <li className="flex-1 flex flex-col space-y-2 p-6">
+          <NavLink 
+            to="informacaopessoal" 
+            className={({ isActive }) =>
+              `flex flex-row items-center px-4 py-2 rounded hover:bg-secondary-300 ${
+                isActive ? "bg-secondary-500" : ""
+              }`
+            }>
+            <RiInformation2Line className="w-4 h-4 mr-4"/>
+            <p>Informação</p>
+          </NavLink>
+        </li>
+        {/* divider*/ }
+        <hr className="mx-full h-px bg-gray-400" />
+      </ul>
+
+      {/* Main Menu */}
+      <ul className="flex-1 flex flex-col space-y-2 p-6">
+        {mainMenu.map(({ to, label, icon: Icon }) => (
+          <li key={label}>
+            <NavLink
+              to={to}
+              className={({ isActive }) =>
+                `flex items-center px-4 py-2 rounded hover:bg-secondary-300 ${
+                  isActive ? "bg-secondary-500" : ""
+                }`
+              }
+            >
+              <Icon className="w-5 h-5 mr-3" />
+              <span className="text-sm font-semibold">{label}</span>
+            </NavLink>
+          </li>   
+        ))}
+      </ul>
+    </nav>
   );
 }

@@ -3,7 +3,7 @@ from django.db import models
 class Responsavel(models.Model):
     PARENTESCO_CHOICES = [
         ("PAI", "Pai"),
-        ("MãE", "Mãe"),
+        ("MÃE", "Mãe"),
         ("AVÓ", "Avó"),
         ("AVÔ", "Avô"),
         ("OUTRO", "Outro"),

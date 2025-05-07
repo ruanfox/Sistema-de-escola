@@ -18,7 +18,6 @@ class UserSerializer(serializers.ModelSerializer):
             'cpf',
             'rg',
             'email',
-            'senha',
             'data_criacao',
             'tipo_User',
             'foto',
