@@ -4,9 +4,15 @@ import { PiChalkboardTeacherBold } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { useState } from "react";
 import AddStudents from "../components/AddStudents";
+import AddTeaches from "../components/AddTeaches";
+import AddAdmins from "../components/AddAdmins";
+import AddClasses from "../components/AddClasses";
 
 export default function Dashboard(){
     const [showAddStudents, setShowAddStudents ] = useState(false);
+    const [ showAddTeaches, setShowAddTeaches ] = useState(false);
+    const [ showAddAdmins, setShowAddAdmins ] = useState(false);
+    const [ showAddClasses, setShowAddClasses ] = useState(false);
 
     return(
         <div className="flex w-full justify-center text-grey-400 mt-[3.5rem]">
@@ -14,6 +20,27 @@ export default function Dashboard(){
             {showAddStudents && (
                <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30">
                     <AddStudents onClose={() => setShowAddStudents(false)} />
+                </div>
+            )}
+
+            {/*Condicional para exibir o form de adicionar o professor*/}
+            {showAddTeaches && (
+               <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30">
+                    <AddTeaches onClose={() => setShowAddTeaches(false)} />
+                </div>
+            )}
+
+            {/*Condicional para exibir o form de adicionar o admin*/}
+            {showAddAdmins && (
+               <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30">
+                    <AddAdmins onClose={() => setShowAddAdmins(false)} />
+                </div>
+            )}
+
+            {/*Condicional para exibir o form de adicionar o classes*/}
+            {showAddClasses && (
+               <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30">
+                    <AddClasses onClose={() => setShowAddClasses(false)} />
                 </div>
             )}
 
@@ -26,7 +53,10 @@ export default function Dashboard(){
                             <RiUserAddFill className="h-6 w-6 text-primary-400"/>
                         </div>
                         <div className="flex flex-col">
-                            <h3 className="text-2xl mb-4">Adicionar admins</h3>
+                            <h3 
+                                className="text-2xl mb-4 cursor-pointer"
+                                onClick={() => setShowAddAdmins(prev => !prev)}
+                            >Adicionar admins</h3>
                             <div className="w-[29rem]">
                                 <p className="text-[14px} font-regular">
                                     Use esta funcionalidade para criar novos usuários com perfil de administrador.
@@ -41,9 +71,9 @@ export default function Dashboard(){
                         </div>
                         <div className="flex flex-col">
                             <h3 
-                                className="text-2xl mb-4"
-                                onClick={() => setShowAddStudents(prev => !prev)}
-                                >Adicionar Turmas
+                                className="text-2xl mb-4 cursor-pointer"
+                                onClick={() => setShowAddClasses(prev => !prev)}
+                                >Adicionar Classes
                             </h3>
 
                             <div className="w-[29rem]">
@@ -78,7 +108,12 @@ export default function Dashboard(){
                             <PiChalkboardTeacherBold className="h-6 w-6 text-primary-400"/>
                         </div>
                         <div className="flex flex-col">
-                            <h3 className="text-2xl mb-4">Adicionar Professores</h3>
+                            <h3 
+                                className="text-2xl mb-4 cursor-pointer"
+                                onClick={() => setShowAddTeaches(prev => !prev)}
+                            >
+                                Adicionar Professores
+                            </h3>
                             <div className="w-[29rem]">
                                 <p className="text-[14px} font-regular">
                                     Use esta funcionalidade para criar novos usuários com perfil de professores.
