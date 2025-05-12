@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard";
 import PersonalInfo from "./pages/PersonalInfo";
+import Teaches from "./pages/Teaches";
+import Students from "./pages/Students";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +19,9 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "login", element: <Login /> },
       { path: "dashboard", element: <Dashboard />},
-      { path: "informacaoPessoal", element: <PersonalInfo />}
+      { path: "informacaoPessoal", element: <PersonalInfo />},
+      { path: "professores", element: <Teaches />},
+      { path: "estudantes", element: <Students />}
     ]
   }
 ]);
